@@ -182,6 +182,7 @@ void op_exit_plugins(void)
 			o->mixer_ops->exit();
 		if (o->pcm_initialized)
 			o->pcm_ops->exit();
+		dlclose(o->handle);
 	}
 }
 
