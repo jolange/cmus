@@ -1807,7 +1807,7 @@ static void spawn_status_program(void)
 
 	argv[i++] = xstrdup("status");
 	argv[i++] = xstrdup(player_status_names[status]);
-	if (player_info.ti) {
+	if (status != PLAYER_STATUS_EXITING && player_info.ti) {
 		static const char *keys[] = {
 			"artist", "album", "discnumber", "tracknumber", "title", "date",
 			"musicbrainz_trackid", NULL
@@ -2527,5 +2527,7 @@ int main(int argc, char *argv[])
 	init_all();
 	main_loop();
 	exit_all();
+	player_info.status = PLAYER_STATUS_EXITING;
+	spawn_status_program();
 	return 0;
 }

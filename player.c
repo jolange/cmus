@@ -40,7 +40,7 @@
 #include <math.h>
 
 const char * const player_status_names[] = {
-	"stopped", "playing", "paused", NULL
+	"stopped", "playing", "paused", "exiting", NULL
 };
 
 enum producer_status {
