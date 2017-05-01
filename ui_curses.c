@@ -2428,6 +2428,7 @@ static void exit_all(void)
 	pl_exit();
 	player_exit();
 	op_exit_plugins();
+	// exit ip?
 	commands_exit();
 	search_mode_exit();
 	filters_exit();
